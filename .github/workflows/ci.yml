@@ -1,0 +1,22 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  CI:
+    runs-on: macos-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Install Asymptote
+      run: brew install asymptote
+
+    - name: Create album art
+      run: ./create
+
+    - name: Archive album art
+      uses: actions/upload-artifact@main
+      with:
+        name: How
+        path: How.png

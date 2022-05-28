@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+asy create.asy -outname How
+
+# Based on https://brunogirin.blogspot.com/2009/09/making-noise-with-imagemagick.html
+convert \
+  -size $(identify -format '%wx%h' How.png) \
+  canvas: -seed 0 +noise Random \
+  -fx intensity -colorize 15% \
+  -virtual-pixel tile -blur 0x1 \
+  noise.png
+
+convert \
+  -compose overlay -define compose:args=50,50 -composite How.png noise.png \
+  How.png
+
+rm -f noise.png
+
+convert How.png \
+  -crop 3000x3000-0+1670 +repage \
+  -background black -vignette 0x1000-15-15% \
+  How.png
