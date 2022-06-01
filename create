@@ -6,7 +6,7 @@ asy create.asy -outname How
 
 # Based on https://brunogirin.blogspot.com/2009/09/making-noise-with-imagemagick.html
 convert \
-  -size $(identify -format '%wx%h' How.png) \
+  -size $(identify -format %wx%h How.png) \
   canvas: -seed 0 +noise Random \
   -fx intensity -colorize 15% \
   -virtual-pixel tile -blur 0x1 \
