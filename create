@@ -19,6 +19,6 @@ convert \
 rm -f noise.png
 
 convert How.png \
-  -crop 3000x3000-0+1670 +repage \
+  -crop 3000x3000+0+1670 +repage \
   -background black -vignette 0x1000-15-15% \
   How.png
