@@ -1,6 +1,7 @@
 # “How” Album Art
 
-This is a collection of scripts for creating the album art for “How”
+This is a collection of scripts for creating the album art for
+[“How”](https://open.spotify.com/track/6NgJuplUtRHNE8JpeVyyea)
 using [Asymptote](https://asymptote.sourceforge.io) and [ImageMagick](https://imagemagick.org).
 
 To install Asymptote and ImageMagick using [Homebrew](https://brew.sh) on macOS, run:
